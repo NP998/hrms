@@ -1,0 +1,88 @@
+// .hole-input-container{
+//     margin-top:-20px;
+// .input-Component{
+//     border:1px solid $hr_gray1;
+//     padding: 20px;
+//     border-radius: 25px;
+//     transition: 0.1s all ease-in-out;
+//     height:10px;
+//     padding-top: 2px;
+//     margin-bottom: 60px;
+//     margin-top:12px;
+//     &.input-component:focus-within{
+//         border: 1.5px solid $hr_accent;
+//         background: transparentize($color: $hr_gray1, $amount: 0.75);
+//     }
+   
+//             .input{
+//                 border:none;
+//                 outline: none;
+//                 font-size: 15px;
+//                 background: none;
+//                line-height: 25px;
+//                 width: 100%;
+               
+                
+//             &:active{
+//                outline: none;
+//              }
+//             }
+//             .input-icon-Container{
+//                 display: flex;
+//                 align-items: center;
+//                 margin-bottom: 5px;
+                
+                
+//             }
+//             svg{
+//                 margin-left: 8px;
+//                 cursor: pointer;
+//             }
+// }
+// .input-error{
+//     color:red;
+//     font-size: 15px;
+//     position:relative;
+//     top: -50px
+// }
+
+// }
+
+.input-component{
+    border:1px solid $hr_gray1;
+    padding: 8px;
+    border-radius: 25px;
+    transition: 0.1s all ease-in-out;
+   // &.input-component:focus-within{
+    //    border: 1.5px solid $hr_accent;
+   //     background: transparentize($color: $hr_gray1, $amount: 0.75);
+    }
+    .input{
+        border: none;
+        outline: none;
+        background: none;
+        width: 100%;
+        line-height: 16px;
+        font-size: 16px;
+        &:active{
+            outline: none;
+        }
+    }
+
+    .input-icon-container{
+        display: flex;
+        align-items: center;
+        
+    }
+    svg{
+        margin-left: 8px;
+        cursor: pointer;
+    }
+//}
+.input-error{
+    color:red;
+    margin:0px;
+    margin-top: 4px;
+    font-size: 12px;
+    
+}

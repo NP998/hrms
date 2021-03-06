@@ -1,0 +1,20 @@
+@import "./theme.scss";
+//global lable
+@import "./common";
+@import "./typography";
+@import "../components/dashboardLayout/_dashboardLayout";
+//component
+@import "../components/button/button";
+@import "../components/header/header";
+@import "../components/input/input";
+@import "../components/rightcontainer/rightcontainer";
+@import "../components/rightcontainer/calendar/mycalendar";
+@import "../components/rightcontainer/profile/profile";
+@import "../components/jobskill/jobskill";
+@import "../components/list/list";
+
+//screens
+
+@import "../screen/home/home";
+@import "../screen/login/login";
+@import "../screen/contactDetails/contactdetails";

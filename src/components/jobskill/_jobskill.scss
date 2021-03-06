@@ -1,0 +1,53 @@
+*{
+   margin: 0px;
+   padding: 0px;
+   box-sizing: border-box;
+ }
+ 
+//  .container{
+   
+//    display: flex;
+//    justify-content: center;
+//    align-items: center;
+ 
+//  }
+ 
+ .center_card{
+   height: 100%;
+   width:100%;
+   background: #eee;
+   border-radius: 10px;
+ }
+ h3{
+     font-size: 0.9rem;
+ }
+ input{
+   line-height: 25px;
+   margin-top: 10px;
+   background: #eee;
+   
+   border:none;
+   border-bottom:1px solid gray;
+   font-weight: bold;
+   width:80%;
+   
+ }
+ input:focus,
+ select:focus,
+ textarea:focus,
+ button:focus {
+     outline: none;
+ }
+ button{
+   margin-left: 10px;
+   font-size: 1.2rem;
+   width: 25px;
+   height: 30px;
+   cursor: pointer;
+   
+ }
+ ol{
+   margin-top: 10px;
+   
+ }
+ 

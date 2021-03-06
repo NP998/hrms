@@ -1,0 +1,49 @@
+
+ .header p{
+          color:rgb(43, 39, 39);
+          font-weight: bold;
+          margin:40px 0px 40px 20px;
+          span{
+              color:$hr_blue;
+          }
+        }   
+.container{
+    display: flex;
+    justify-content: space-between;
+    .left-container{
+        flex-basis: 50%;
+        .left-up-container,.left-down-container{
+        .jobtitle-input{
+            border:none;
+            .job-label{
+               margin-left:10px;
+               
+            }
+            .input-container{
+                border :1px solid $hr_gray1;
+                border-radius: 10px;
+                margin:12px 8px;
+                padding:5px;
+                .job-input{
+                    
+                }
+            }
+            .input-errors{
+                position: relative;
+                left:20px;
+            }
+        }
+    }
+         
+    }
+    .right-container{
+         flex-basis: 45%;
+        
+         .right-up-container{
+             height:62%;
+             
+
+             
+         }
+    }
+}

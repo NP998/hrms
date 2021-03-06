@@ -1,0 +1,70 @@
+.dashboard-layout{
+    display: flex;
+    height: 111vh;
+    padding: 12px;
+    background:$hr_background;
+    .side-nav-bar{
+        flex-basis:20%;
+        max-width: 250px;
+        min-width: 200px;
+        background:$hr_background;
+        .logo-container{
+            text-align: center;
+            color:$hr_accent;
+        }
+        .nav-container{
+            padding-left: 28px;
+            padding-top: 24px;
+            a{
+                text-decoration: none;
+                }
+            .nav-item{
+                display: flex;
+                align-items:center;
+                color:$hr_white;
+                padding: 8px;
+                margin-top: 10px;
+                cursor: pointer;
+                transition: 0.4s all ease-in-out;
+                text-decoration: none;
+                .item-name{
+                    margin-left: 16px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    text-decoration:none;
+                    
+                     }
+                &.selected{
+                    color:$hr_accent;
+                    border-right:4px solid $hr_accent;
+                    }
+                 }
+            .nav-item:hover{
+                color:transparentize($color:$hr_accent, $amount: 0.6);
+                border-right:4px solid transparentize($color:$hr_accent,$amount:0.6);
+            }
+            
+        }
+        .svg-container{
+            margin-top: 73px;
+           margin-right: 50px;
+            img{
+                position: relative;
+                right:25%;
+                bottom: 10%;;
+                
+               height:40%;
+               width:150%;
+               
+            }
+        }
+    }
+    .main-container{
+        flex-basis: 80%;
+        background: rgb(13, 13, 92);
+        border-radius: 25px;
+        background:$hr_white;
+        height: 98.5%;
+    }
+}
+

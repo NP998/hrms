@@ -1,0 +1,191 @@
+
+.home-container{
+    height: 100%;
+.header{
+    display:flex;
+    justify-content: space-between;
+    .page-header{
+    h1{
+        color:black;
+        position:absolute;
+        top:50px;
+        }
+    }
+    .header-logo{
+       
+        margin-left: 20%;
+        margin-top: 25px;
+        display: flex;
+        .logo1{
+            margin-right: 20px;
+        }
+        .logo2{
+            margin-right: 20px;
+        }
+        .action-icon{
+            margin-top: 10px;
+            margin-left: 8px;
+        }
+       .hover-action{
+        margin-top:-5px;
+        //height:12px;
+        padding-bottom: 12px;
+        display: flex;
+        position: relative;
+        bottom: 5px;
+       }
+      
+        
+    } 
+
+    .header-name-pic{
+       
+        display: flex;
+        h6{
+            font-size: 15px;
+            margin-top: 34px;
+        }
+       img{
+           margin-top: 25px;
+           margin-left: 20px;
+           border-radius: 50%;
+           border:2px solid rgb(114, 68, 68);
+           position: relative;
+           
+       }
+       
+    }    
+    }
+    .container{
+            display: flex;
+           
+        .home-left-container{
+            
+            height: 100%;
+            flex-basis: 70%;
+            margin-top: 10px;
+            .home-left-container-up1{
+                margin-bottom: 33px;
+                width:100%;
+                display: flex;
+                justify-content: space-between;
+                background: $hr_accent;
+                border-radius:30px;
+                
+               
+            .home-left-container-up2{
+               
+                flex-basis: 100%;
+              
+                padding-left: 40px;
+                span{
+                    font-weight: bold;
+                }
+                .p1{
+                    font-size: 13px;
+                    margin-bottom: 8px;
+                }
+                .p2,.p3,.p4{
+                    line-height: 0.4;
+                    font-size: 12px;
+                    padding-bottom: 8px;
+                }
+                .p5{
+                    text-decoration: underline;
+                    font-size: 13px;
+                }
+            }
+            .image-tag{
+                position: relative;
+                left:13.5%;
+               
+               
+
+            }
+        }
+            .home-left-container-down{
+                    display: flex;
+                    justify-content: space-between;
+                    padding-left: 45px;
+                    padding-right: 20px;
+                    align-items: center;
+                    border-bottom: 2px solid $hr_gray1;
+                    button{
+                        border-radius: 30px;
+                        width: 15%;
+                        height: 35px;
+                        border:none;
+                        background: $hr_accent;
+                        font-weight: bold;
+                        cursor: pointer;
+                    }
+            }
+            .left-container-table{
+                table, th, td {
+                    border: 1px solid white;
+                    border-collapse: collapse;
+                  }
+                  table{
+                      font-size: 11px;
+                      width: 100%;
+                      tr{
+                         border-bottom: 2px solid $hr_gray1;
+                        margin-left: 20%;
+                        
+                        //    .first_th{
+                        //        position:relative;
+                        //        right:30px;
+                        //    }
+                        //    .second_th{
+                        //     position:relative;
+                        //     right:20px;
+                        //    }
+                        th{
+                            border-bottom: 1px solid $hr_gray1;
+                            padding-right: 85px;
+                            padding-top:14px;
+                            padding-bottom:14px;
+                            
+                        }
+                        td{
+                            margin-left: 35px;
+                            padding-bottom: 8px;
+                            padding-top:8px;
+                           
+                        }
+                        .sss{
+                            display: flex;
+                            span{
+                                padding-top: 10px;
+                                padding-left: 10px;
+                            }
+                        }
+                        
+                    }
+                    .last_row{
+                       
+                       border-bottom: 1px solid white;
+                       .one{
+                           position:relative;
+                           left:5%;
+                       }
+                       .two{
+                            position: relative;
+                            left:50%;
+                            font-weight: bold;
+                       }
+                    }
+                      }
+                  
+                }
+            }
+            
+        }
+        .home-right-container{
+            
+            height: 100%;
+            flex-basis: 30%;
+            margin-top: 10px;
+            margin-left:10px;
+        }
+    }
