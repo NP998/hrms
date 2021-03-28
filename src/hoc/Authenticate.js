@@ -1,6 +1,11 @@
+
+
 // use higher order component(hoc) means pass a component as argument in function and return a component
-function authenticate(component){
+const authenticate=(component)=>{
     const accessToken=localStorage.getItem('access-token')
+
+   
+
     const isloggedIn=accessToken?true:false;
     if(isloggedIn){
         return component

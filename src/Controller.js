@@ -5,6 +5,8 @@ import Home from "./screen/home/Home";
 import Recruitment from "./screen/recruitment/Recruitment"
 import Login from "./screen/login/Login";
 import ContactDetails from "./screen/contactDetails/ContactDetails";
+import { Provider } from 'react-redux';
+import store from './store'
 const Controller=()=>{
     //use for user logged in or not
    // comment state due to use hoc
@@ -24,7 +26,7 @@ const Controller=()=>{
 
         // 2 after adding authentication 
         //when we cilck in login page then token store in localstorage
-       
+       <Provider store={store}>
             <Router>
                {/* { console.log(isloggedIn)} */}
             <Switch>
@@ -38,6 +40,7 @@ const Controller=()=>{
                 </DashboardLayout>
                 </Switch>
             </Router>
+       </Provider>
        
     )
 }

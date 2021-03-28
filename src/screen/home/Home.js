@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import Header from "../../components/header/Header";
 import authenticate from "../../hoc/Authenticate";
 
@@ -9,9 +10,16 @@ import authenticate from "../../hoc/Authenticate";
     //             props.history.push("/login")
     //         }
     // },[props.isloggdIn])
+    const user=useSelector((state)=>{
+         return state.user;
+         
+    })
+   
     return(
     <div className="home">
-        <Header pageHeader="Dashboard"/>
+
+        <Header pageHeader="Dashboard" userName={`${user.firstName} ${user.lastName}`}/>
+        {/* <div>{user.toString()}</div> */}
     </div>
     )
 }

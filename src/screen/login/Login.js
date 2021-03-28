@@ -1,11 +1,15 @@
-import { Formik } from "formik";
+//import { Formik } from "formik";
 import Button from "../../components/button/Button";
 import Input from "../../components/input/Input";
 import {useFormik} from "formik";
 import * as yup from "yup";
 import React from "react";
+import axios from "../../utils/axios";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../actions/userActions";
 
 const Login = (props) => {
+  const dispatch=useDispatch()
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -20,22 +24,38 @@ const Login = (props) => {
         password: yup
           .string()
           .required("Password cannot be empty")
-          .matches(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/,"Weak Password"),
+          //.matches(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/,"Weak Password"),
       }),
       onSubmit: (values) => {
         console.log(values);
-        loginClickHandler();
+        loginClickHandler(values);
       },
     });
     //1when we click on loginClickhandler then jwt token store in local storage and move to dashboard
-    const loginClickHandler=()=>{
-        //2api call is made-return
-         const jwtToken="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
-        //3now store in local storage
-        localStorage.setItem("access-token",jwtToken)
-        //4 
-        // props.setIsLoggedIn(true)
-       props.history.push("/")
+    const loginClickHandler=(data)=>{
+          //**make api call
+          axios.post('/auth/login',data).then(async (response)=>{
+            //in response return id of that user
+            const jwtToken=response.headers.authorization.split(" ")[1];
+          //  console.log(jwtToken);
+            axios.defaults.headers.authorization = `Bearer ${jwtToken}`
+            localStorage.setItem("access-token",jwtToken)
+
+            const user=await axios.get("/user/"+response.data.id).then(response=>response.data)
+            dispatch(setUser(user))//we saw actionUser data only printed at home screen thats why we are send data at actionUser
+            props.history.push("/")
+            //  console.log(response.headers)
+          })
+          .catch(error=>{
+            console.log(error);
+          })
+      //   //2api call is made-return
+      //    const jwtToken="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+      //   //3now store in local storage
+      //   localStorage.setItem("access-token",jwtToken)
+      //   //4 
+      //   // props.setIsLoggedIn(true)
+      //  props.history.push("/")
     }
     
     const onBlur = (name) =>{

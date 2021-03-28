@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link,useLocation} from 'react-router-dom';
+import {Link,useLocation,useHistory} from 'react-router-dom';
 import {BiHomeAlt} from 'react-icons/bi';
 import {BsPeople} from 'react-icons/bs';
 import {CgFileDocument} from 'react-icons/cg';
@@ -7,6 +7,8 @@ import {VscGraph} from 'react-icons/vsc';
 import {FiCalendar,FiSettings} from 'react-icons/fi';
 import {AiOutlineContacts} from "react-icons/ai";
 import navimage from "../../screen/image/b.jpg"
+import Button from '../button/Button';
+import axios from '../../utils/axios'
 
 const navItems=[
     {
@@ -48,7 +50,19 @@ const navItems=[
 
 const DashboardLayout=({children})=>{
     const location=useLocation()
-    console.log(children)
+    const history=useHistory()
+    const logoutHandler=()=>{
+        localStorage.removeItem('access-token')
+        axios.get('/auth/logout')
+        .then(response=>{
+          history.push("/login")
+
+        })
+        .catch(error=>{
+            console.log(error);
+        })
+    }
+   
     return(
         <div className="dashboard-layout">
             <nav className="side-nav-bar">
@@ -68,7 +82,10 @@ const DashboardLayout=({children})=>{
                <div className="svg-container">
                         <img className="nvimage" src={navimage} alt="image" height="100%" width="100%"/>
                </div>
-
+               {/* //add logout button */}
+               <div>
+                  <Button onClick={logoutHandler}>Logout</Button>
+               </div>
             </nav>
             <div className="main-container">
               {children}

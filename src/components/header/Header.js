@@ -11,8 +11,10 @@ import { IoIosNotificationsOutline } from "react-icons/io";
 import {GoPrimitiveDot} from 'react-icons/go'
 import {BsThreeDots} from "react-icons/bs"
 import Rightcontainer from '../rightcontainer/Rightcontainer'
-export default function Header({pageHeader}){
+export default function Header({pageHeader,userName}){
+    console.log(userName)
     return(
+       
     <div className="home-container">   
     <header className="header">
         <div className="page-header">
@@ -27,7 +29,7 @@ export default function Header({pageHeader}){
             <IoIosNotificationsOutline  className="action-icon"/>
         </div>
         <div className="header-name-pic">
-            <h6>Navin Patel</h6>
+            <h6>{userName}</h6>
             <img src={profile_image} alt="image" height="40px" width="40px"/>
         </div>
         </header>
